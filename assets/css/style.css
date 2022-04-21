@@ -17,6 +17,8 @@ img{width: 100%;}
 }
 
 .my_card .text{
+    background-color: rgba(0, 0, 0, 0.575);
+    height: 110px;
     width: 100%;
     position: absolute;
     color: white;
