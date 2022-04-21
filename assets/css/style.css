@@ -1,6 +1,14 @@
 *{overflow: hidden;}
+body{background-color: black;}
 img{width: 100%;}
-.row{display: flex; justify-content: center; align-items: center; height: 100vh;}
+.row{
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh;
+}
+
+
 .col-8, .col-2{padding: 0; position: relative;}
 .col-8 img{height: 550px;}
 
