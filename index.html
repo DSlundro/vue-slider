@@ -26,7 +26,7 @@
                 <div class="row">
                     <div class="img1 col-8">
                         <div class="my_card">
-                            <img :src="objects[activeImage].image" :alt="'Image' + [activeImage].title" @mouseenter="pauseSlider" @mouseleave="resumeSlider">
+                            <img :src="objects[activeImage].image" :alt="'Image' + [activeImage].title" @mouseenter="stop" @mouseleave="start">
                             <div class="text">
                                 <h3>{{objects[activeImage].title}}</h3>
                                 <small>{{objects[activeImage].text}}</small>
@@ -45,7 +45,7 @@
                         </div>
                         <div class="thumbnails"> 
                             <img :src="objects[index].image" class="thumb" :class="activeImage === index ? 'active' : '' " 
-                            v-for="(thumb, index) in objects" @mouseenter="pauseSlider" @mouseleave="resumeSlider"> 
+                            v-for="(thumb, index) in objects" @mouseenter="stop" @mouseleave="start"> 
                         </div> 
     
                     </div>

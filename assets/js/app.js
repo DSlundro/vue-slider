@@ -55,7 +55,7 @@ const app = new Vue({
         ],
     },
     mounted: function() {
-            this.startSlide();
+            this.start();
         },
     methods: {
         prevImage(){
@@ -73,16 +73,12 @@ const app = new Vue({
             }
         },
 
-        startSlide: function() {
+        start: function() {
             this.timer = setInterval(this.nextImage, 3000);
         },
 
-        pauseSlider () {
+        stop () {
             clearInterval(this.timer);
-        },
-
-        resumeSlider () {
-            this.timer = setInterval(this.nextImage, 3000);
         },
     },
 })
