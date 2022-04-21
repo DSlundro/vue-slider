@@ -34,7 +34,8 @@
                         </div>
                     </div>
     
-                    <div class="img2 col-2">
+                    <div class="img2 col-2" @mouseenter="stop" @mouseleave="start">
+                        
                         <div class="navigator">
                             <div class="prev" @click="prevImage">
                                 <i class="fas fa-chevron-up"></i>
@@ -43,10 +44,12 @@
                                 <i class="fas fa-chevron-down"></i>
                             </div>
                         </div>
+
                         <div class="thumbnails"> 
                             <img :src="objects[index].image" class="thumb" :class="activeImage === index ? 'active' : '' " 
-                            v-for="(image, index) in objects" @mouseenter="stop" @mouseleave="start" @click="activateImage(index)"> 
+                            v-for="(image, index) in objects" @click="activateImage(index)"> 
                         </div>
+                        
                     </div>
                 </div>
             </div>

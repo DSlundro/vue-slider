@@ -54,9 +54,7 @@ const app = new Vue({
             }
         ],
     },
-    mounted: function() {
-            this.start();
-    },
+    mounted(){this.start();},
     methods: {
         prevImage(){
             console.log('Prev image');
@@ -72,16 +70,16 @@ const app = new Vue({
                 this.activeImage = 0;
             }
         },
-        start: function() {
+        start() {
             this.timer = setInterval(this.nextImage, 3000);
         },
-        stop () {
+        stop() {
             clearInterval(this.timer);
         },
         activateImage(imageIndex){
             this.activeImage = imageIndex;
         },
     },
-})
+});
 
 
