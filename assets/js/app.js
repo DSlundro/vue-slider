@@ -20,3 +20,69 @@ Bonus:
 2- applicare l'autoplay allo slider: ogni 3 secondi, cambia immagine automaticamente
 3- quando il mouse va in hover sullo slider, bloccare l'autoplay e farlo riprendere quando esce 
 */
+
+
+const app = new Vue({
+    el : "#app",
+    data : {
+        activeImage: 0,
+        objects: [
+            {
+                image: './assets/img/01.jpg',
+                title: 'Svezia',
+                text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.',
+            },
+            {
+                image: './assets/img/02.jpg',
+                title: 'Svizzera',
+                text: 'Lorem ipsum.',
+            },
+            {
+                image: './assets/img/03.jpg',
+                title: 'Gran Bretagna',
+                text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
+            },
+            {
+                image: './assets/img/04.jpg',
+                title: 'Germania',
+                text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam.',
+            },
+            {
+                image: './assets/img/05.jpg',
+                title: 'Paradise',
+                text: 'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis.',
+            }
+        ],
+    },
+    mounted: function() {
+            this.startSlide();
+        },
+    methods: {
+        prevImage(){
+            console.log('Prev image');
+            if(this.activeImage === 0){
+                this.activeImage = this.objects.length;
+            }
+            this.activeImage--;
+        },
+        nextImage(){
+            console.log('Next image');
+            this.activeImage++;
+            if(this.activeImage === this.objects.length){
+                this.activeImage = 0;
+            }
+        },
+        
+        startSlide: function() {
+            this.timer = setInterval(this.nextImage, 3000);
+        },
+
+        pauseSlider () {
+            clearInterval(this.timer);
+        },
+
+        resumeSlider () {
+            this.timer = setInterval(this.nextImage, 3000);
+        },
+    },
+})

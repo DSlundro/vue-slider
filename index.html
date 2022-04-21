@@ -20,18 +20,54 @@
 </head>
 <body>
 
+    <div id="app">
+        <div class="my_container">
+            <div class="row">
+                <div class="img1 col-8">
+                    <div class="my_card">
+                        <img :src="objects[activeImage].image" :alt="'Image' + [activeImage].title" @mouseenter="pauseSlider" @mouseleave="resumeSlider">
+                        <div class="text">
+                            <h3>{{objects[activeImage].title}}</h3>
+                            <small>{{objects[activeImage].text}}</small>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="img2 col-2">
+                    <div class="navigator">
+                        <div class="prev" @click="prevImage">
+                            <i class="fas fa-chevron-up"></i>
+                        </div>
+                        <div class="next" @click="nextImage">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="thumbnails"> 
+                        <img :src="objects[index].image" class="thumb" :class="activeImage === index ? 'active' : '' " 
+                        v-for="(thumb, index) in objects" @mouseenter="pauseSlider" @mouseleave="resumeSlider"> 
+                    </div> 
 
-
-
-
-
-
-
-
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script src="./assets/js/app.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+                <!-- <div class="navigator">
+                    <div class="prev" @click="prevImage">
+                        <i class="fas fa-chevron-up"></i>
+                    </div>
+                    <div class="next" @click="nextImage">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div> -->
