@@ -78,5 +78,10 @@ const app = new Vue({
         stop () {
             clearInterval(this.timer);
         },
+        activateImage(imageIndex){
+            this.activeImage = imageIndex;
+        },
     },
 })
+
+

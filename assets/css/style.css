@@ -58,6 +58,7 @@ img{width: 100%;}
 .thumbnails img{
     height: 110px;
     filter: brightness(40%);
+    cursor: pointer;
 }
 
 .active {
