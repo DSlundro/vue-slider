@@ -45,9 +45,8 @@
                         </div>
                         <div class="thumbnails"> 
                             <img :src="objects[index].image" class="thumb" :class="activeImage === index ? 'active' : '' " 
-                            v-for="(thumb, index) in objects" @mouseenter="stop" @mouseleave="start"> 
-                        </div> 
-    
+                            v-for="(image, index) in objects" @mouseenter="stop" @mouseleave="start"> 
+                        </div>
                     </div>
                 </div>
             </div>
